@@ -64,7 +64,9 @@ function Pagination({ currentPage = 987, totalPage = 1000, onChangePage }) {
         <li className="pagination__item">
           <button
             disabled={currentPage === 1}
-            className="pagination__link"
+            className={`pagination__link ${
+              page?.number === currentPage.toString() ? "active" : ""
+            }`}
             onClick={() => handleChangePage(currentPage - 1)}
           >
             <span> {`<`}</span>
@@ -90,7 +92,9 @@ function Pagination({ currentPage = 987, totalPage = 1000, onChangePage }) {
 
         <li className="pagination__item">
           <button
-            className="pagination__link"
+            className={`pagination__link ${
+              page?.number === currentPage.toString() ? "active" : ""
+            }`}
             disabled={currentPage === totalPage}
             onClick={() => handleChangePage(currentPage + 1)}
           >
