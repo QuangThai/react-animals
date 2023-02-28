@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import axiosClient from "../api/axiosClient";
 import petApi from "../api/petApi";
 import { useAuth } from "../contexts/AuthContext";
 
