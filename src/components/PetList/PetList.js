@@ -20,7 +20,17 @@ function PetList() {
         <div className="grid wide">
           <div className="row">
             {isLoading && isLoadFirst ? (
-              <Loading />
+              <div
+                style={{
+                  display: "flex",
+                  justifyContent: "center",
+                  alignItems: "center",
+                  height: "100vh",
+                  margin: "0 auto",
+                }}
+              >
+                <Loading />
+              </div>
             ) : (
               <>
                 {Array.isArray(petList) && petList.length > 0 ? (

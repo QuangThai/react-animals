@@ -1,5 +1,5 @@
 .btn {
-  --body-bg: #0f172a;
+  --body-bg: var(--primary-color);
   --btn-gradient: linear-gradient(to right, #4facfe 0%, #00f2fe 100%);
   --btn-txt-color: #ffffff;
   position: relative;
@@ -45,7 +45,7 @@
   color: var(--btn-txt-color);
   text-transform: uppercase;
   font-weight: 600;
-  font-size: 1.5rem;
+  font-size: 1.3rem;
   transition: all 0.3s ease;
   border-radius: 1px;
 }

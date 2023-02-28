@@ -8,6 +8,7 @@ const axiosClient = axios.create({
 });
 
 axiosClient.interceptors.request.use(async (config) => {
+  // Handle token here ...
   // const token = window.localStorage.getItem("TOKEN_ANIMAL");
   // if (token) {
   //   config.headers.Authorization = `Bearer ${token}`;

@@ -208,3 +208,13 @@
     left: 100%;
   }
 }
+
+/*  mobile */
+@media (max-width: 739px) {
+  .pagination__item {
+    margin: 0 10px;
+  }
+  .pagination__link {
+    min-width: 30px;
+  }
+}

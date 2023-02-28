@@ -18,6 +18,12 @@
   height: 100%;
 }
 
+.header__logo {
+  fill: #fff;
+  display: block;
+  height: 70px;
+}
+
 .button {
   --color: #6a5af9;
   font-family: "Poppins", sans-serif;
@@ -48,4 +54,11 @@
 
 .button:hover:before {
   width: 100%;
+}
+
+/*  mobile */
+@media (max-width: 739px) {
+  .header__logo {
+    height: 50px;
+  }
 }
