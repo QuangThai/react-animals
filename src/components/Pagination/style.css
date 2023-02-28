@@ -1,0 +1,34 @@
+/* pagination */
+.pagination {
+  margin: 0px auto 24px auto;
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  align-items: center;
+}
+.pagination__list {
+  margin: auto;
+}
+.pagination__item {
+  list-style: none;
+  display: inline-block;
+  margin: 0 16px;
+}
+.pagination__link {
+  display: block;
+  text-decoration: none;
+  text-align: center;
+  min-width: 40px;
+  height: 30px;
+  line-height: 30px;
+  color: rgba(0, 0, 0, 0.4);
+  border-radius: 2px;
+  font-weight: 300;
+  cursor: pointer;
+}
+.pagination__link.active {
+  background-color: var(--primary-color);
+  color: var(--white-color);
+}

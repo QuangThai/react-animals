@@ -1,23 +1,33 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { Suspense, useEffect } from "react";
+import { Route, Routes, useNavigate } from "react-router-dom";
+import Loading from "./components/Loading/Loading";
+import { useAuth } from "./contexts/AuthContext";
+
+const Login = React.lazy(() => import("./components/Login/Login"));
+const PetList = React.lazy(() => import("./components/PetList/PetList"));
+const NotFound = React.lazy(() => import("./components/NotFound/NotFound"));
 
 function App() {
+  const { token } = useAuth();
+  const navigation = useNavigate();
+
+  useEffect(() => {
+    if (!token) {
+      navigation("/login");
+    } else {
+      navigation("/pets");
+    }
+  }, [token, navigation]);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="wrapper">
+      <Suspense fallback={<Loading />}>
+        <Routes>
+          <Route path="/login" element={<Login />} />
+          <Route path="/pets" element={<PetList />} />
+          <Route pat="*" element={<NotFound />} />
+        </Routes>
+      </Suspense>
     </div>
   );
 }
